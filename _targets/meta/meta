@@ -1,0 +1,7 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+create_request_df|function|cb659d6e5a0a0a5f|||||||||||||||
+first_5|stem||8431771886e13c69|032afd1b405710c1|1364276723||t19299.6457960613s||0|rds|local|vector|||3.726||Status code was not 200. Returned status code429
+joe_diss_occs|stem|065f755b8cd99da7|a1ab7ca2cdde18cf|ef46db3751d8e999|-369236556|data/joe_diss_essential_data.csv|t19299.0543338849s|92f69f9edc38bb7f|4215|file|local|vector|||0.305||
+occs_df|stem|3670be2d604bc36f|7213a28ddeb2c18d|935deb3347936f73|279750214||t19299.0544717041s|46153c644b533f93|2651|rds|local|vector|||0.215||
+request_dfs|stem|6639ff5a5c3467fb|87636538caec525a|ed48a4f795a46471|1082007393||t19299.0553327342s|f78513395687754a|2753|rds|local|vector|||0.082||
+send_request|function|882f5586856b07ca|||||||||||||||
