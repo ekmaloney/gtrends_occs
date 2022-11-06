@@ -1,7 +1,9 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 create_request_df|function|cb659d6e5a0a0a5f|||||||||||||||
-first_5|stem||8431771886e13c69|032afd1b405710c1|1364276723||t19299.6457960613s||0|rds|local|vector|||3.726||Status code was not 200. Returned status code429
-joe_diss_occs|stem|065f755b8cd99da7|a1ab7ca2cdde18cf|ef46db3751d8e999|-369236556|data/joe_diss_essential_data.csv|t19299.0543338849s|92f69f9edc38bb7f|4215|file|local|vector|||0.305||
-occs_df|stem|3670be2d604bc36f|7213a28ddeb2c18d|935deb3347936f73|279750214||t19299.0544717041s|46153c644b533f93|2651|rds|local|vector|||0.215||
-request_dfs|stem|6639ff5a5c3467fb|87636538caec525a|ed48a4f795a46471|1082007393||t19299.0553327342s|f78513395687754a|2753|rds|local|vector|||0.082||
-send_request|function|882f5586856b07ca|||||||||||||||
+first_5|stem|4b923195727dc7d0|48d58d7289ff2a8f|10df0d98de2e06c4|1364276723||t19302.0751303693s|9c85cd8dac937bd2|477991|rds|local|vector|||125.191||
+fourth_5|stem||1f99dcb08b32bae8|47a0acf53700e82d|-2044915094||t19302.7666828265s||0|rds|local|vector|||11.552||NANaN argument
+joe_diss_occs|stem|aa8d43ca4740faef|a1ab7ca2cdde18cf|ef46db3751d8e999|-369236556|data/joe_diss_essential_data.csv|t19302.7841254675s|2e25be52c542dabe|5035|file|local|vector|||0.317||
+occs_df|stem|54c53ca20815abf7|7213a28ddeb2c18d|f6a2e7ec739a8d92|279750214||t19302.7842479811s|8cfa30c392dc361b|3011|rds|local|vector|||0.185||
+request_dfs|stem|8369870f329fd456|22c2171260eb53de|ecfc86990f75423a|1082007393||t19302.7842494377s|b874515163c13f4d|2906|rds|local|vector|||0.088||
+second_5|stem||a1c706ec29a6d6a9|47a0acf53700e82d|114888048||t19302.7912940379s||0|rds|local|vector|||18.574||Status code was not 200. Returned status code429
+send_request|function|2cfb54ae4e03dab3|||||||||||||||

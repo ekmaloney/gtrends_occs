@@ -31,4 +31,6 @@ send_request <- function(df){
     res_all[[length(res_all)+1]] <- res
     #Sys.sleep(60)
   }
+  
+  return(res_all)
 }
