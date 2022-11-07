@@ -5,5 +5,5 @@ fourth_5|stem||1f99dcb08b32bae8|47a0acf53700e82d|-2044915094||t19302.7666828265s
 joe_diss_occs|stem|aa8d43ca4740faef|a1ab7ca2cdde18cf|ef46db3751d8e999|-369236556|data/joe_diss_essential_data.csv|t19302.7841254675s|2e25be52c542dabe|5035|file|local|vector|||0.317||
 occs_df|stem|54c53ca20815abf7|7213a28ddeb2c18d|f6a2e7ec739a8d92|279750214||t19302.7842479811s|8cfa30c392dc361b|3011|rds|local|vector|||0.185||
 request_dfs|stem|8369870f329fd456|22c2171260eb53de|ecfc86990f75423a|1082007393||t19302.7842494377s|b874515163c13f4d|2906|rds|local|vector|||0.088||
-second_5|stem||a1c706ec29a6d6a9|47a0acf53700e82d|114888048||t19302.7912940379s||0|rds|local|vector|||18.574||Status code was not 200. Returned status code429
+second_5|stem||a1c706ec29a6d6a9|47a0acf53700e82d|114888048||t19302.7912940379s||0|rds|local|vector|||1.486||Status code was not 200. Returned status code429
 send_request|function|2cfb54ae4e03dab3|||||||||||||||
