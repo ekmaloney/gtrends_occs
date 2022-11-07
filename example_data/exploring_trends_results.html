@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Em Maloney">
+
+<title>Exploring GTrends results</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="exploring_trends_results_files/libs/clipboard/clipboard.min.js"></script>
+<script src="exploring_trends_results_files/libs/quarto-html/quarto.js"></script>
+<script src="exploring_trends_results_files/libs/quarto-html/popper.min.js"></script>
+<script src="exploring_trends_results_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="exploring_trends_results_files/libs/quarto-html/anchor.min.js"></script>
+<link href="exploring_trends_results_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="exploring_trends_results_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="exploring_trends_results_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="exploring_trends_results_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="exploring_trends_results_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Exploring GTrends results</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Em Maloney </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="google-trends" class="level2">
+<h2 class="anchored" data-anchor-id="google-trends">Google Trends</h2>
+<p>(github link: https://github.com/ekmaloney/gtrends_occs)</p>
+<p>For each occupation search term, I send 37 requests to the Google trends API, each spanning 1 year in length, from January 1 2018-January 1 2019 through January 1 2021-January 1 2022. The benefit of getting such a large range of dates is that then we will have both:</p>
+<ul>
+<li><p>multiple observations per week, which may help with idiosyncrasies in the google trends returns</p></li>
+<li><p>uncovering seasonality in the trends (does the search spike in a certain month even before the pandemic?)</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"request_dfs.RDS"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>accountant_request <span class="ot">&lt;-</span> d[[<span class="dv">1</span>]]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>accountant_request <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>together) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">b</th>
+<th style="text-align: left;">e</th>
+<th style="text-align: left;">keyword</th>
+<th style="text-align: left;">geo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2018-01-01</td>
+<td style="text-align: left;">2019-01-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2018-02-01</td>
+<td style="text-align: left;">2019-02-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2018-03-01</td>
+<td style="text-align: left;">2019-03-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2018-04-01</td>
+<td style="text-align: left;">2019-04-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2018-05-01</td>
+<td style="text-align: left;">2019-05-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2018-06-01</td>
+<td style="text-align: left;">2019-06-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2018-07-01</td>
+<td style="text-align: left;">2019-07-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2018-08-01</td>
+<td style="text-align: left;">2019-08-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2018-09-01</td>
+<td style="text-align: left;">2019-09-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2018-10-01</td>
+<td style="text-align: left;">2019-10-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2018-11-01</td>
+<td style="text-align: left;">2019-11-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2018-12-01</td>
+<td style="text-align: left;">2019-12-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2019-01-01</td>
+<td style="text-align: left;">2020-01-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019-02-01</td>
+<td style="text-align: left;">2020-02-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2019-03-01</td>
+<td style="text-align: left;">2020-03-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019-04-01</td>
+<td style="text-align: left;">2020-04-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2019-05-01</td>
+<td style="text-align: left;">2020-05-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019-06-01</td>
+<td style="text-align: left;">2020-06-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2019-07-01</td>
+<td style="text-align: left;">2020-07-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019-08-01</td>
+<td style="text-align: left;">2020-08-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2019-09-01</td>
+<td style="text-align: left;">2020-09-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019-10-01</td>
+<td style="text-align: left;">2020-10-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2019-11-01</td>
+<td style="text-align: left;">2020-11-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019-12-01</td>
+<td style="text-align: left;">2020-12-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2020-01-01</td>
+<td style="text-align: left;">2021-01-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020-02-01</td>
+<td style="text-align: left;">2021-02-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2020-03-01</td>
+<td style="text-align: left;">2021-03-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020-04-01</td>
+<td style="text-align: left;">2021-04-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2020-05-01</td>
+<td style="text-align: left;">2021-05-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020-06-01</td>
+<td style="text-align: left;">2021-06-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2020-07-01</td>
+<td style="text-align: left;">2021-07-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020-08-01</td>
+<td style="text-align: left;">2021-08-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2020-09-01</td>
+<td style="text-align: left;">2021-09-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020-10-01</td>
+<td style="text-align: left;">2021-10-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2020-11-01</td>
+<td style="text-align: left;">2021-11-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020-12-01</td>
+<td style="text-align: left;">2021-12-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2021-01-01</td>
+<td style="text-align: left;">2022-01-01</td>
+<td style="text-align: left;">accountant</td>
+<td style="text-align: left;">US</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="what-does-the-api-return" class="level2">
+<h2 class="anchored" data-anchor-id="what-does-the-api-return">What does the API return?</h2>
+<p>For each request (row in the previous data frame), the API returns a dataframe split by week. I have used map to iterate over the df, so it’s returned as a list of 37 dataframes. Thus, we can easily “pluck” the values of interest from the list.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>accountant <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"example_return.RDS"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#is a list with 37 dfs in it </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(accountant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 37</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the interest over time </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>hits_df <span class="ot">&lt;-</span> accountant <span class="sc">%&gt;%</span> <span class="fu">map_df</span>(<span class="st">"interest_over_time"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>hits_df <span class="ot">&lt;-</span> hits_df <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">date =</span> lubridate<span class="sc">::</span><span class="fu">ymd</span>(date)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">group_by</span>(date) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">avg_hits =</span> <span class="fu">mean</span>(hits),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">sd_hits =</span> <span class="fu">sd</span>(hits)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>           <span class="fu">pivot_longer</span>(avg_hits<span class="sc">:</span>sd_hits, </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                        <span class="at">names_to =</span> <span class="st">"metric"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">values_to =</span> <span class="st">"values"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>           <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(values))</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> hits_df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">y =</span> values,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">color =</span> metric)) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> hits), <span class="at">color =</span> <span class="st">"dark grey"</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                           <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> lubridate<span class="sc">::</span><span class="fu">ymd</span>(<span class="st">"2020-03-15"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="exploring_trends_results_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We also get the related queries and search terms from these results:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the related queries</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>queries <span class="ot">&lt;-</span> accountant <span class="sc">%&gt;%</span> <span class="fu">map_df</span>(<span class="st">"related_queries"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>queries <span class="sc">%&gt;%</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(value) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                                                                                                                                                                                                                                                                                                                                                                                                       value
+1                                                                                                                                                                                                                                                                                                                                                                                                                         accountant near me
+2                                                                                                                                                                                                                                                                                                                                                                                                                      quickbooks accountant
+3                                                                                                                                                                                                                                                                                                                                                                                                                             accountant job
+4                                                                                                                                                                                                                                                                                                                                                                                                                            accountant jobs
+5                                                                                                                                                                                                                                                                                                                                                                                                                          accountant salary
+6                                                                                                                                                                                                                                                                                                                                                                                                                                 accounting
+7                                                                                                                                                                                                                                                                                                                                                                                                                        business accountant
+8                                                                                                                                                                                                                                                                                                                                                                                                                       certified accountant
+9                                                                                                                                                                                                                                                                                                                                                                                                                                        cpa
+10                                                                                                                                                                                                                                                                                                                                                                                                                         online accountant
+11                                                                                                                                                                                                                                                                                                                                                                                                                                quickbooks
+12                                                                                                                                                                                                                                                                                                                                                                                                                         senior accountant
+13                                                                                                                                                                                                                                                                                                                                                                                                                          staff accountant
+14                                                                                                                                                                                                                                                                                                                                                                                                                            tax accountant
+15                                                                                                                                                                                                                                                                                                                                                                                                                            the accountant
+16                                                                                                                                                                                                                                                                                                                                                                                                                           cost accountant
+17                                                                                                                                                                                                                                                                                                                                                                                                                             an accountant
+18                                                                                                                                                                                                                                                                                                                                                                                                                         public accountant
+19                                                                                                                                                                                                                                                                                                                                                                                                                                   account
+20                                                                                                                                                                                                                                                                                                                                                                                                                      what is a accountant
+21                                                                                                                                                                                                                                                                                                                                                                                                                     what is an accountant
+22                                                                                                                                                                                                                                                                                                                                                                                                                            cpa accountant
+23                                                                                                                                                                                                                                                                                                                                                                                                                               accountants
+24                                                                                                                                                                                                                                                                                                                                                                                                                    adp accountant connect
+25                                                                                                                                                                                                                                                                                                                                                                                                                      financial accountant
+26                                                                                                                                                                                                                                                                                                                                                                                                                        accountant connect
+27                                                                                                                                                                                                                                                                                                                                                                                                                          accountant movie
+28                                                                                                                                                                                                                                                                                                                                                                                                                   quickbooks online login
+29                                                                                                                                                                                                                                                                                                                                                                                                                     salary for accountant
+30                                                                                                                                                                                                                                                                                                                                                                                                                    tax accountant near me
+31                                                                                                                                                                                                                                                                                                                                                                                                               personal accountant near me
+32                                                                                                                                                                                                                                                                                                                                                                                                                   accountant jobs near me
+33                                                                                                                                                                                                                                                                                                                                                                                                                         accounting salary
+34                                                                                                                                                                                                                                                                                                                                                                                                              adp accountant connect login
+35                                                                                                                                                                                                                                                                                                                                                                                                                           1800 accountant
+36                                                                                                                                                                                                                                                                                                                                                                                                                          stephen merchant
+37                                                                                                                                                                                                                                                                                                                                                                                                                  the accountant streaming
+38                                                                                                                                                                                                                                                                                                                                                                                                                         accountant degree
+39                                                                                                                                                                                                                                                                                                                                                                                                                            qbo accountant
+40                                                                                                                                                                                                                                                                                                                                                                                                               the accountant of auschwitz
+41                                                                                                                                                                                                                                                                                                                                                                                                             where to watch the accountant
+42                                                                                                                                                                                                                                                                                                                                                                                                                   accountant of auschwitz
+43                                                                                                                                                                                                                                                                                                                                                                                                                    accountant salary 2019
+44                                                                                                                                                                                                                                                                                                                                                                                                                   accounting jobs near me
+45                                                                                                                                                                                                                                                                                                                                                                                                                                 soul cast
+46                                                                                                                                                                                                                                                                                                                                                                                                               what is a tiktok accountant
+47                                                                                                                                                                                                                                                                                                                                                                                                                     1800 accountant login
+48                                                                                                                                                                                                                                                                                                                                                                                                                      accountant on tiktok
+49                                                                                                                                                                                                                                                                                                                                                                                                                      qbo accountant login
+50                                                                                                                                                                                                                                                                                                                                                                                                                              rachel house
+51                                                                                                                                                                                                                                                                                                                                                                                                              surepayroll accountant login
+52                                                                                                                                                                                                                                                                                                                                                                                                       what does accountant mean on tiktok
+53                                                                                                                                                                                                                                                                                                                                                                                                           what is an accountant on tiktok
+54                                                                                                                                                                                                                                                                                                                                                                                                               what is an accountant slang
+55                                                                                                                                                                                                                                                                                                                                                                                                              what is an accountant tiktok
+56                                                                                                                                                                                                                                                                                                                                                                                                                       whats an accountant
+57                                                                                                                                                                                                                                                                                                                                                                                          paper company accountant spilling a pot of chili
+58                                                                                                                                                                                                                                                                                                                                                                                                              quickbooks online accountant
+59                                                                                                                                                                                                                                                                                                                                                                                                            real estate accountant near me
+60                                                                                                                                                                                                                                                                                                                                                                                                                        tik tok accountant
+61                                                                                                                                                                                                                                                                                                                                                                                                                   1800 accountant reviews
+62                                                                                                                                                                                                                                                                                                                                                                                                                          accountant slang
+63                                                                                                                                                                                                                                                                                                                                                                                                                           big4 accountant
+64                                                                                                                                                                                                                                                                                                                                                                                                                            ddg accountant
+65                                                                                                                                                                                                                                                                                                                                                                                                               forensic accountant near me
+66                                                                                                                                                                                                                                                                                                                                                                                                 how long does it take to be an accountant
+67                                                                                                                                                                                                                                                                                                                                                                                                               quickbooks accountant login
+68                                                                                                                                                                                                                                                                                                                                                                                                                         quickbooks online
+69                                                                                                                                                                                                                                                                                                                                                                                                        quickbooks online accountant login
+70                                                                                                                                                                                                                                                                                                                                                                                                                           turf accountant
+71                                                                                                                                                                                                                                                                                                                                                                                                                    accountant salary 2018
+72                                                                                                                                                                                                                                                                                                                                                                                                               accountant urban dictionary
+73                                                                                                                                                                                                                                                                                                                                                                                                                          im an accountant
+74                                                                                                                                                                                                                                                                                                                                                                                                        what does a forensic accountant do
+75                                                                                                                                                                                                                                                                                                                                                                                                                    accountant description
+76  an important application of regression analysis in accounting is in the estimation of cost. by collecting data on volume and cost and using the least squares method to develop an estimated regression equation relating volume and cost, an accountant can estimate the cost associated with a particular manufacturing volume. consider the following sample of production volumes and total cost data for a manufacturing operation.
+77                                                                                                                                                                                                                                                                                                                                                                                                                               cpa near me
+78                                                                                                                                                                                                                                                                                                                                                                                                                          spice accountant
+79                                                                                                                                                                                                                                                                                                                                                                                                                              the way back
+80                                                                                                                                                                                                                                                                                                                                                                                                                tik tok accountant meaning
+81                                                                                                                                                                                                                                                                                                                                                                                                                         tiktok accountant
+82                                                                                                                                                                                                                                                                                                                                                                                                                 tiktok accountant meaning
+83                                                                                                                                                                                                                                                                                                                                                                                                                         trumps accountant
+84                                                                                                                                                                                                                                                                                                                                                                                                                      watch the accountant
+85                                                                                                                                                                                                                                                                                                                                                                                                                    accountant connect adp
+86                                                                                                                                                                                                                                                                                                                                                                                                                           accountant song
+87                                                                                                                                                                                                                                                                                                                                                                                                                 accounting certifications
+88                                                                                                                                                                                                                                                                                                                                                                                                               business accountant near me
+89                                                                                                                                                                                                                                                                                                                                                                                                           personal tax accountant near me
+90                                                                                                                                                                                                                                                                                                                                                                                                                          spicy accountant
+91                                                                                                                                                                                                                                                                                                                                                                                               what degree do you need to be an accountant
+92                                                                                                                                                                                                                                                                                                                                                                                                                 accountant meaning tiktok
+93                                                                                                                                                                                                                                                                                                                                                                                                                         accountant tiktok
+94                                                                                                                                                                                                                                                                                                                                                                                                                         ask my accountant
+95                                                                                                                                                                                                                                                                                                                                                                                                       certified public accountant near me
+96                                                                                                                                                                                                                                                                                                                                                                                                        quickbooks accountant online login
+97                                                                                                                                                                                                                                                                                                                                                                                                      quickbooks online accountant pricing
+98                                                                                                                                                                                                                                                                                                                                                                                                        quickbooks online login accountant
+99                                                                                                                                                                                                                                                                                                                                                                                                         small business accountant near me
+100                                                                                                                                                                                                                                                                                                                                                                                                         where can i watch the accountant
+101                                                                                                                                                                                                                                                                                                                                                                                                                         1-800 accountant
+102                                                                                                                                                                                                                                                                                                                                                                                                                        accountant goalie
+103                                                                                                                                                                                                                                                                                                                                                                                                               accountant salary per hour
+104                                                                                                                                                                                                                                                                                                                                                                                                              fred the vampire accountant
+105                                                                                                                                                                                                                                                                                                                                                                                            how long does it take to become an accountant
+106                                                                                                                                                                                                                                                                                                                                                                                                                     jr accountant salary
+107                                                                                                                                                                                                                                                                                                                                                                                                                nurse practitioner salary
+108                                                                                                                                                                                                                                                                                                                                                                                                                            paul giamatti
+109                                                                                                                                                                                                                                                                                                                                                                                                             quickbooks accountant online
+110                                                                                                                                                                                                                                                                                                                                                                                                            staff accountant jobs near me
+111                                                                                                                                                                                                                                                                                                                                                                                                                     tax preparer near me
+112                                                                                                                                                                                                                                                                                                                                                                                                                   the wealthy accountant
+113                                                                                                                                                                                                                                                                                                                                                                                                                       what is accountant
+114                                                                                                                                                                                                                                                                                                                                                                                                                           800 accountant
+115                                                                                                                                                                                                                                                                                                                                                                                                                       accountant 2 movie
+116                                                                                                                                                                                                                                                                                                                                                                                                                 accountant connect login
+117                                                                                                                                                                                                                                                                                                                                                                                                                           accountant cpa
+118                                                                                                                                                                                                                                                                                                                                                                                                                       accountant meaning
+119                                                                                                                                                                                                                                                                                                                                                                                  an accountant who combines accounting and investigating
+120                                                                                                                                                                                                                                                                                                                                                                                                               cpa tax accountant near me
+121                                                                                                                                                                                                                                                                                                                                                                                                                       electrician salary
+122                                                                                                                                                                                                                                                                                                                                                                                                               physician assistant salary
+123                                                                                                                                                                                                                                                                                                                                                                                                                       rihanna accountant
+124                                                                                                                                                                                                                                                                                                                                                                                                                  staff accountant resume
+125                                                                                                                                                                                                                                                                                                                                                                                                              staff accountant salary nyc
+126                                                                                                                                                                                                                                                                                                                                                                                                                  tax accountants near me
+127                                                                                                                                                                                                                                                                                                                                                                                                                      the accountant film
+128                                                                                                                                                                                                                                                                                                                                                                                                                    the accountant sequel
+129                                                                                                                                                                                                                                                                                                                                                                                                                         trump accountant
+130                                                                                                                                                                                                                                                                                                                                                                                                              urban dictionary accountant
+131                                                                                                                                                                                                                                                                                                                                                                                                                          accountant cast
+132                                                                                                                                                                                                                                                                                                                                                                                                                   accountant salary 2020
+133                                                                                                                                                                                                                                                                                                                                                                                                                         accountant visor
+134                                                                                                                                                                                                                                                                                            an accountant who combines accounting and investigating skills to uncover suspected fraudulent business activity or to prevent such activity.
+135                                                                                                                                                                                                                                                                                                                                                                                                                       bank teller salary
+136                                                                                                                                                                                                                                                                                                                                                                                                                   cast of the accountant
+137                                                                                                                                                                                                                                                                                                                                                                                                                     chartered accountant
+138                                                                                                                                                                                                                                                                                                                                                                                                                crypto accountant near me
+139                                                                                                                                                                                                                                                                                                                                                                                                                  dental hygienist salary
+140                                                                                                                                                                                                                                                                                                                                                                                                                           dentist salary
+141                                                                                                                                                                                                                                                                                                                                                                                                                 forensic accounting jobs
+142                                                                                                                                                                                                                                                                                                                                                                                                      how much does a tax accountant cost
+143                                                                                                                                                                                                                                                                                                                                                                                                                    insightful accountant
+144                                                                                                                                                                                                                                                                                                                                                                                                                  intuit accountant login
+145                                                                                                                                                                                                                                                                                                                                                                                                             is the accountant on netflix
+146                                                                                                                                                                                                                                                                                                                                                                                                                                     jobs
+147                                                                                                                                                                                                                                                                                                                                                                                                                   junior accountant jobs
+148                                                                                                                                                                                                                                                                                                                                                                                                               mechanical engineer salary
+149                                                                                                                                                                                                                                                                                                                                                                                                                         movie accountant
+150                                                                                                                                                                                                                                                                                                                                                                                                                physical therapist salary
+151                                                                                                                                                                                                                                                                                                                                                                                                                   remote accounting jobs
+152                                                                                                                                                                                                                                                                                                                                                                                                                     salary of accountant
+153                                                                                                                                                                                                                                                                                                                                                                                                                                sean rowe
+154                                                                                                                                                                                                                                                                                                                                                                                                     staff accountant interview questions
+155                                                                                                                                                                                                                                                                                                                                                                                                                    stream the accountant
+156                                                                                                                                                                                                                                                                                                                                                                                                                      the accountant cast
+157                                                                                                                                                                                                                                                                                                                                                                                                                      the accountant plot
+158                                                                                                                                                                                                                                                                                                                                                                                                                the accountant soundtrack
+159                                                                                                                                                                                                                                                                                                                                                                                                            the accountant where to watch
+160                                                                                                                                                                                                                                                                                                                                                                                                                                 the town
+161                                                                                                                                                                                                                                                                                                                                                                                                               what is a spicy accountant
+162                                                                                                                                                                                                                                                                                                                                                                                                            whats an accountant on tiktok
+163                                                                                                                                                                                                                                                                                                                                                                                                          where was the accountant filmed
+164                                                                                                                                                                                                                                                                                                                                                                                                                           accountability
+165                                                                                                                                                                                                                                                                                                                                                                                                                         accountant gifts
+166                                                                                                                                                                                                                                                                                                                                                                                                                   accountant hourly rate
+167                                                                                                                                                                                                                                                                                                                                                                                                               accountant resume examples
+168                                                                                                                                                                                                                                                                                                                                                                                                                 accountant yearly salary
+169                                                                                                                                                                                                                                                                                                                                                                                                                       ben affleck movies
+170                                                                                                                                                                                                                                                                                                                                                                                                                                 business
+171                                                                                                                                                                                                                                                                                                                                                                                                                              career test
+172                                                                                                                                                                                                                                                                                                                                                                                                     certified management accountant jobs
+173                                                                                                                                                                                                                                                                                                                                                                                                                 certified tax accountant
+174                                                                                                                                                                                                                                                                                                                                                                                                                        cma certification
+175                                                                                                                                                                                                                                                                                                                                                                                                                   cpa accountant near me
+176                                                                                                                                                                                                                                                                                                                                                                                                                              cpa meaning
+177                                                                                                                                                                                                                                                                                                                                                                                                                             david dawson
+178                                                                                                                                                                                                                                                                                                                                                                                                         day in the life of an accountant
+179                                                                                                                                                                                                                                                                                                                                                                                                         general ledger accountant salary
+180                                                                                                                                                                                                                                                                                                                                                                                                                            h and r block
+181                                                                                                                                                                                                                                                                                                                                                                                                   how much does a senior accountant make
+182                                                                                                                                                                                                                                                                                                                                                                                                      how much does a tax accountant make
+183                                                                                                                                                                                                                                                                                                                                                                                                   how much money does an accountant make
+184                                                                                                                                                                                                                                                                                                                                                                                                           how to become a tax accountant
+185                                                                                                                                                                                                                                                                                                                                                                                                             international tax accountant
+186                                                                                                                                                                                                                                                                                                                                                                                                              is being an accountant hard
+187                                                                                                                                                                                                                                                                                                                                                                                                                 parks and rec accountant
+188                                                                                                                                                                                                                                                                                                                                                                                                                  personal tax accountant
+189                                                                                                                                                                                                                                                                                                                                                                                                                     qb online accountant
+190                                                                                                                                                                                                                                                                                                                                                                                                               quickbooks accountant 2018
+191                                                                                                                                                                                                                                                                                                                                                                                              quickbooks accountant desktop 2021 download
+192                                                                                                                                                                                                                                                                                                                                                                                               quickbooks premier accountant edition 2019
+193                                                                                                                                                                                                                                                                                                                                                                                                                    quickbooks proadvisor
+194                                                                                                                                                                                                                                                                                                                                                                                                                     soul cast accountant
+195                                                                                                                                                                                                                                                                                                                                                                                                                 the accountant explained
+196                                                                                                                                                                                                                                                                                                                                                                                                                   the accountant netflix
+197                                                                                                                                                                                                                                                                                                                                                                                                                    the accountant stream
+198                                                                                                                                                                                                                                                                                                                                                                                                                            the equalizer
+     n
+1   47
+2   38
+3   37
+4   37
+5   37
+6   37
+7   37
+8   37
+9   37
+10  37
+11  37
+12  37
+13  37
+14  37
+15  37
+16  36
+17  35
+18  34
+19  31
+20  29
+21  28
+22  27
+23  26
+24  21
+25  20
+26  19
+27  19
+28  19
+29  19
+30  19
+31  16
+32  15
+33  15
+34  15
+35  14
+36  14
+37  14
+38  13
+39  13
+40  13
+41  13
+42  12
+43  12
+44  12
+45  12
+46  12
+47  11
+48  11
+49  11
+50  11
+51  11
+52  11
+53  11
+54  11
+55  11
+56  11
+57  10
+58  10
+59  10
+60  10
+61   9
+62   9
+63   9
+64   9
+65   9
+66   9
+67   9
+68   9
+69   9
+70   9
+71   8
+72   8
+73   8
+74   8
+75   7
+76   7
+77   7
+78   7
+79   7
+80   7
+81   7
+82   7
+83   7
+84   7
+85   6
+86   6
+87   6
+88   6
+89   6
+90   6
+91   6
+92   5
+93   5
+94   5
+95   5
+96   5
+97   5
+98   5
+99   5
+100  5
+101  4
+102  4
+103  4
+104  4
+105  4
+106  4
+107  4
+108  4
+109  4
+110  4
+111  4
+112  4
+113  4
+114  3
+115  3
+116  3
+117  3
+118  3
+119  3
+120  3
+121  3
+122  3
+123  3
+124  3
+125  3
+126  3
+127  3
+128  3
+129  3
+130  3
+131  2
+132  2
+133  2
+134  2
+135  2
+136  2
+137  2
+138  2
+139  2
+140  2
+141  2
+142  2
+143  2
+144  2
+145  2
+146  2
+147  2
+148  2
+149  2
+150  2
+151  2
+152  2
+153  2
+154  2
+155  2
+156  2
+157  2
+158  2
+159  2
+160  2
+161  2
+162  2
+163  2
+164  1
+165  1
+166  1
+167  1
+168  1
+169  1
+170  1
+171  1
+172  1
+173  1
+174  1
+175  1
+176  1
+177  1
+178  1
+179  1
+180  1
+181  1
+182  1
+183  1
+184  1
+185  1
+186  1
+187  1
+188  1
+189  1
+190  1
+191  1
+192  1
+193  1
+194  1
+195  1
+196  1
+197  1
+198  1</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the interest over time </span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>topics <span class="ot">&lt;-</span> accountant <span class="sc">%&gt;%</span> <span class="fu">map_df</span>(<span class="st">"related_topics"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>topics <span class="sc">%&gt;%</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(value) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                  value  n
+1                            QuickBooks 42
+2                            Accountant 38
+3                     Bachelor's degree 38
+4                               Finance 38
+5                   Forensic accountant 38
+6                   Forensic accounting 38
+7                      Forensic science 38
+8                                Salary 38
+9                     senior accountant 38
+10                              Account 37
+11                           Accounting 37
+12                              Average 37
+13                             Business 37
+14                        Certification 37
+15          Certified Public Accountant 37
+16                                  Job 37
+17                      Job description 37
+18                               Public 37
+19                                  Tax 37
+20                       The Accountant 37
+21                      1-800Accountant 29
+22                 Chartered accountant 21
+23                       Small business 14
+24                    Statutory auditor 14
+25                             ADP, LLC 12
+26                            Chartered 12
+27                               Estate 12
+28                                 KPMG 12
+29                             LinkedIn 12
+30                              Adviser 11
+31                                 Soul 11
+32                   QuickBooks Desktop 10
+33                    Financial adviser  9
+34                        Corporate tax  8
+35          The Accountant Of Auschwitz  8
+36                              Balance  7
+37                           Bookkeeper  7
+38                      Entry-level job  7
+39      Federal Bureau of Investigation  7
+40                   Project accounting  7
+41                          Bookkeeping  6
+42                              Revenue  6
+43                     Accounts payable  5
+44                               Career  5
+45                       General ledger  5
+46                               Intuit  5
+47                        Anna Kendrick  4
+48                     Associate degree  4
+49                          Ben Affleck  4
+50                                 Duty  4
+51                Financial transaction  4
+52                                Nurse  4
+53                  Bachelor of Science  3
+54                              Expense  3
+55                           Goaltender  3
+56                                Skill  3
+57                              Auditor  2
+58                          Corporation  2
+59                             Engineer  2
+60                               Equity  2
+61                      Fund accounting  2
+62                            H&amp;R Block  2
+63                              Payroll  2
+64                     Registered nurse  2
+65                                 Wage  2
+66                                Asset  1
+67                                Audit  1
+68              Chief Financial Officer  1
+69                          Comptroller  1
+70                             Director  1
+71                           Experience  1
+72                           Income tax  1
+73                               Ledger  1
+74               Occupational Therapist  1
+75                        Part-time job  1
+76 Tax preparation in the United States  1
+77                           Tax report  1</code></pre>
+</div>
+</div>
+<p>Is essential in either of these lists? No.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>queries <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(value, <span class="st">"essential"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] subject         related_queries value           geo            
+[5] keyword         category       
+&lt;0 rows&gt; (or 0-length row.names)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>topics <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(value, <span class="st">"essential"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] subject        related_topics value          geo            keyword       
+[6] category      
+&lt;0 rows&gt; (or 0-length row.names)</code></pre>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

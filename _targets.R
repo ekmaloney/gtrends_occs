@@ -5,7 +5,6 @@
 # targets are stored as meta objects 
 # and only changes when upstream targets are changed themselves
 ################################################################################
-
 library(targets) #workflow package
 
 #telling our workflow to get all of the functions needed 

@@ -1,0 +1,84 @@
+---
+title: "Exploring GTrends results"
+author: "Em Maloney"
+format: html
+editor: visual
+---
+
+## Google Trends 
+
+(github link: https://github.com/ekmaloney/gtrends_occs)
+
+For each occupation search term, I send 37 requests to the Google trends API, each spanning 1 year in length, from January 1 2018-January 1 2019 through January 1 2021-January 1 2022. The benefit of getting such a large range of dates is that then we will have both:
+
+-   multiple observations per week, which may help with idiosyncrasies in the google trends returns
+
+-   uncovering seasonality in the trends (does the search spike in a certain month even before the pandemic?)
+
+```{r, message = FALSE}
+
+library(tidyverse)
+library(purrr)
+
+d <- readRDS("request_dfs.RDS")
+accountant_request <- d[[1]]
+accountant_request %>% select(-together) %>% 
+knitr::kable()
+```
+
+## What does the API return? 
+
+For each request (row in the previous data frame), the API returns a dataframe split by week. I have used map to iterate over the df, so it's returned as a list of 37 dataframes. Thus, we can easily "pluck" the values of interest from the list.
+
+```{r}
+accountant <- readRDS("example_return.RDS")
+
+#is a list with 37 dfs in it 
+length(accountant)
+
+#get the interest over time 
+hits_df <- accountant %>% map_df("interest_over_time")
+hits_df <- hits_df %>% 
+           mutate(date = lubridate::ymd(date)) %>% 
+           group_by(date) %>% 
+           mutate(avg_hits = mean(hits),
+                  sd_hits = sd(hits)) %>% 
+           pivot_longer(avg_hits:sd_hits, 
+                        names_to = "metric",
+                        values_to = "values") %>% 
+           filter(!is.na(values))
+
+ggplot(data = hits_df, mapping = aes(x = date, 
+                                     y = values,
+                                     color = metric)) +
+  geom_line() + geom_point(aes(x = date, y = hits), color = "dark grey",
+                           alpha = 0.1) + theme_minimal() + 
+  geom_vline(aes(xintercept = lubridate::ymd("2020-03-15")))
+  
+```
+
+We also get the related queries and search terms from these results:
+
+```{r}
+#get the related queries
+queries <- accountant %>% map_df("related_queries")
+
+queries %>% 
+  count(value) %>% arrange(desc(n))
+```
+
+```{r}
+#get the interest over time 
+topics <- accountant %>% map_df("related_topics")
+
+topics %>% 
+  count(value) %>% arrange(desc(n))
+```
+
+Is essential in either of these lists? No.
+
+```{r}
+queries %>% filter(str_detect(value, "essential"))
+
+topics %>% filter(str_detect(value, "essential"))
+```
