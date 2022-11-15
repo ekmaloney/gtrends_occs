@@ -1,9 +1,12 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 create_request_df|function|cb659d6e5a0a0a5f|||||||||||||||
+create_request_new_df|function|8b567ff60a0b2802|||||||||||||||
 first_5|stem|4b923195727dc7d0|48d58d7289ff2a8f|10df0d98de2e06c4|1364276723||t19302.0751303693s|9c85cd8dac937bd2|477991|rds|local|vector|||125.191||
 fourth_5|stem||1f99dcb08b32bae8|47a0acf53700e82d|-2044915094||t19302.7666828265s||0|rds|local|vector|||11.552||NANaN argument
 joe_diss_occs|stem|aa8d43ca4740faef|a1ab7ca2cdde18cf|ef46db3751d8e999|-369236556|data/joe_diss_essential_data.csv|t19302.7841254675s|2e25be52c542dabe|5035|file|local|vector|||0.317||
+new_request_dfs|stem|b390903481438dc9|62d940a13001115c|ef511b5037635a6f|-500945092||t19304.7300065804s|ba984c08f1495aa7|768|rds|local|vector|||0.036||
 occs_df|stem|54c53ca20815abf7|7213a28ddeb2c18d|f6a2e7ec739a8d92|279750214||t19302.7842479811s|8cfa30c392dc361b|3011|rds|local|vector|||0.185||
 request_dfs|stem|8369870f329fd456|22c2171260eb53de|ecfc86990f75423a|1082007393||t19302.7842494377s|b874515163c13f4d|2906|rds|local|vector|||0.088||
+results|stem||42729e57ddc36f39|085af682c793f4a1|1767768831||t19304.7306093621s||0|rds|local|vector|||10.593||Status code was not 200. Returned status code429
 second_5|stem||a1c706ec29a6d6a9|47a0acf53700e82d|114888048||t19302.7912940379s||0|rds|local|vector|||10.102||Timeout was reached trends.google.com Connection timeout after 10003 ms
-send_request|function|2cfb54ae4e03dab3|||||||||||||||
+send_request|function|a86d1297cf74b557|||||||||||||||

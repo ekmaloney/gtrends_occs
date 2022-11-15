@@ -1,11 +1,11 @@
 ---
 title: "Exploring GTrends results"
 author: "Em Maloney"
-format: html
+format: pdf
 editor: visual
 ---
 
-## Google Trends 
+## Google Trends
 
 (github link: https://github.com/ekmaloney/gtrends_occs)
 
@@ -26,7 +26,7 @@ accountant_request %>% select(-together) %>%
 knitr::kable()
 ```
 
-## What does the API return? 
+## What does the API return?
 
 For each request (row in the previous data frame), the API returns a dataframe split by week. I have used map to iterate over the df, so it's returned as a list of 37 dataframes. Thus, we can easily "pluck" the values of interest from the list.
 
@@ -81,4 +81,27 @@ Is essential in either of these lists? No.
 queries %>% filter(str_detect(value, "essential"))
 
 topics %>% filter(str_detect(value, "essential"))
+```
+
+```{r}
+d <- readRDS("eight_results.RDS")
+
+
+#merge into one df
+all_terms <- d %>% map_df("interest_over_time")
+
+
+ggplot(all_terms, mapping = aes(x = date, y = hits, color = keyword)) + 
+       geom_line() + facet_wrap(~keyword) + 
+  theme(legend.position = "none")
+```
+
+```{r}
+d %>% 
+  map_df("related_queries") %>% 
+  filter(str_detect(value, "essential"))
+
+d %>% 
+  map_df("related_topics") %>% 
+  filter(str_detect(value, "essential"))
 ```

@@ -23,14 +23,22 @@ create_request_df <- function(term){
 
 send_request <- function(df){
   res_all <- list()
-  for(i in 1:nrow(df)){
+  for(i in 10:nrow(df)){
     res <- gtrends(keyword = df$keyword[i],
                    geo = df$geo[i],
-                   time = df$together[i])
+                   time = df$time[i])
     
     res_all[[length(res_all)+1]] <- res
-    #Sys.sleep(60)
+    Sys.sleep(10)
   }
   
   return(res_all)
 }
+
+
+create_request_new_df <- function(term){
+  tibble::tibble(time = "2019-12-01 2022-11-08",
+                 keyword = term,
+                 geo = "US") 
+}
+

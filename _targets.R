@@ -25,12 +25,18 @@ list(
   
   #third, send the requests through
   #splitting up the requests because of the rate limiting issue 
-  tar_target(first_5, map(request_dfs[1:5], send_request)),
-  tar_target(second_5, map(request_dfs[6:10], send_request)),
-  tar_target(third_5, map(request_dfs[11:15], send_request)),
-  tar_target(fourth_5, map(request_dfs[16:20], send_request)),
-  tar_target(fifth_5, map(request_dfs[21:25], send_request)),
-  tar_target(sixth_5, map(request_dfs[26:30], send_request)),
-  tar_target(last_7, map(request_dfs[31:37], send_request))
+  #tar_target(first_5, map(request_dfs[1:5], send_request)),
+  #tar_target(second_5, map(request_dfs[6:10], send_request)),
+  #tar_target(third_5, map(request_dfs[11:15], send_request)),
+  #tar_target(fourth_5, map(request_dfs[16:20], send_request)),
+  #tar_target(fifth_5, map(request_dfs[21:25], send_request)),
+  #tar_target(sixth_5, map(request_dfs[26:30], send_request)),
+  #tar_target(last_7, map(request_dfs[31:37], send_request)),
+  
+  #new request df paradigm
+  tar_target(new_request_dfs, map_df(occs_df$search_term, create_request_new_df)),
+  
+  #send requests
+  tar_target(results, send_request(new_request_dfs))
 )
 
